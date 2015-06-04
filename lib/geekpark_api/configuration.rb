@@ -8,6 +8,7 @@ module GeekparkApi
     def self.defaults
       @defaults ||= {
         user_api_base_uri: 'http://www.geekpark.net/api/v1/user',
+        event_api_base_uri: 'http://events.geekpark.net/api/v1/',
         signature: ENV['event_signature']
       }
     end

@@ -20,9 +20,39 @@ Or install it yourself as:
 
     $ gem install geekpark_api
 
+## Config
+
+create `config/initializes/geekpark_api.rb` and put your settings here, you can override default settings.
+
+```ruby
+# :app_id, :app_secret, :signature, :user_api_base_uri, :event_api_base_uri
+GeekparkApi.configure do |config|
+  config.user_api_base_uri = 'http://localhost:3000/api/v1/user'
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+GeekparkApi::User.update(TOKEN, {username: 'ligan1231'})
+
+#  {:status=>200,
+#   :body=>
+#    {"uuid"=>"67271786-8fff-49d0-a180-51b1eb7defb7",
+#     "username"=>"ligan1231",
+#     "realname"=>"",
+#     "email"=>"gavin.li1986@gmail.com",
+#     "company"=>"",
+#     "position"=>"",
+#     "mobile"=>"",
+#     "avatar"=>
+#      {"url"=>"http://7mnpep.com2.z0.glb.clouddn.com/uploads/user/avatar/000/210/689/e0037d0ceac78ccfb7f33b99020b5165.jpeg",
+#       "small"=>{"url"=>"http://7mnpep.com2.z0.glb.clouddn.com/uploads/user/avatar/000/210/689/small_e0037d0ceac78ccfb7f33b99020b5165.jpeg"},
+#       "thumb"=>{"url"=>"http://7mnpep.com2.z0.glb.clouddn.com/uploads/user/avatar/000/210/689/thumb_e0037d0ceac78ccfb7f33b99020b5165.jpeg"},
+#       "medium"=>{"url"=>"http://7mnpep.com2.z0.glb.clouddn.com/uploads/user/avatar/000/210/689/medium_e0037d0ceac78ccfb7f33b99020b5165.jpeg"}},
+#     "bio"=>""}}
+#
+```
 
 ## Development
 
